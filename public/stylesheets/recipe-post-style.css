@@ -1,22 +1,5 @@
-#container {
-    display: flex;
-    flex-direction: row;
-}
-
-#sign-in-form {
-    margin-left: 100px;
-    display: inline-block;
-    flex: 0 1 40%;
-}
-#line {
-    width: 20%;
-    height: 350px;
-    flex: 0 1 20%;
-}
-#create-account-form {
-    margin-right: 100px;
-    display: inline-block;
-    flex: 0 1 40%;
+#recipe-post-form {
+    margin: 0 auto;
 }
 
 .formfield * {
@@ -24,14 +7,15 @@
 }
 
 label {
-    width: 75px;
+    width: 100px;
     display: inline-block;
     margin-right: 8px;
     padding-right: 8px;
 }
 
-input[type=text], input[type=password] {
+input[type=text], textarea {
     width: 350px;
+    display: inline-block;
     padding: 10px;
     margin: 6px 0;
     border: 1px solid #aaa;
@@ -51,6 +35,10 @@ input[type=submit]:hover {
     background-color: #206622;
 }
 
+textarea {
+    resize: none;
+}
+
 #food-1 {
     position: fixed;
     width: 325px;
@@ -63,6 +51,7 @@ input[type=submit]:hover {
     height: 200px;
     left: 620px;
     bottom: -80px;
+    visibility: hidden;
 }
 #food-3 {
     position: fixed;

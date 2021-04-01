@@ -107,10 +107,6 @@ li a:hover:not(.active) {
     max-width: 300px;
 }
 
-h1 {
-    text-align: center;
-}
-
 .searchfromview {
     margin: 35px;
     width: 220px;
