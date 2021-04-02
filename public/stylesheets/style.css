@@ -42,7 +42,6 @@ ul {
     width: 100%;
     list-style-type: none;
     margin: 0;
-    margin-top: 10%;
     padding: 0;
     overflow: hidden;
     background-color: #333;
@@ -81,8 +80,7 @@ li a:hover:not(.active) {
 }
 
 .contentList {
-    margin-left: 5%;
-    margin-top: 3%;
+    margin-bottom: 5%;
     text-align: left;
 }
 
@@ -127,4 +125,17 @@ li a:hover:not(.active) {
     width: 45px;
     height: 30px;
     border: none;
+}
+
+.profileList {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    list-style-type: none;
+    margin: 0;
+    margin-top: 10%;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    border: 1px solid #e7e7e7;
 }
