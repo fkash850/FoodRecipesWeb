@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../stylesheets/style.css">
+    <link rel="stylesheet" href="../stylesheets/recipe-post-style.css">
+    <title>Recipe Posting</title>
+</head>
+<body>
+    <div class="navBar">
+        <ul>
+            <li class="firstNavList"><a href="../index.html">Home</a></li>
+            <li><a href="../pages/login.html">Login</a></li>
+            <li><a href="../pages/profile.html">Profile</a></li>
+            <li><a href="../pages/recipe-view.html">View Recipe</a></li>
+            <li><a class="active" href="../pages/recipe-post.html">Post Recipe</a></li>
+            <li class="lastNavList"><a href="../pages/recipe-search.html">Search Recipe</a></li>
+        </ul>
+    </div>
+
+    <form action="../pages/recipe-view.html" id="recipe-post-form">
+        <h2>Post a recipe</h2>
+        <div class="formfield">
+            <label for="recipeTitle">Title of Recipe:</label>
+            <input type="text" name="recipeTitle" id="recipeTitle">
+        </div>
+        <div class="formfield">
+            <label for="description">Short description:</label>
+            <textarea name="description" id="description" cols="30" rows="5"></textarea>
+        </div>
+        <div class="formfield">
+            <label for="instructions">Instructions:</label>
+            <textarea name="instructions" id="instructions" cols="30" rows="10"></textarea>
+        </div>
+        <div class="formfield">
+            <label for="photos">Add photos:</label>
+            <input type="file" name="photos" id="photos" multiple>
+        </div>
+        <input type="submit" value="Post">
+    </form>
+
+    <img src="../images/food1.png" alt="food-1" id="food-1">
+    <img src="../images/food2.png" alt="food-2" id="food-2">
+    <img src="../images/food3.png" alt="food-3" id="food-3">
+</body>
+</html>

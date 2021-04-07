@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../stylesheets/recipe-post-style.css">
+    <title>Recipe Search</title>
+</head>
+<body>
+    <h1 class="webName">Food Recipes</h1>
+    <div class="navBar">
+        <ul>
+            <li class="firstNavList"><a href="../index.html">Home</a></li>
+            <li><a href="../pages/login.html">Login</a></li>
+            <li><a href="../pages/profile.html">Profile</a></li>
+            <li><a href="../pages/recipe-view.html">View Recipe</a></li>
+            <li><a href="../pages/recipe-post.html">Post Recipe</a></li>
+            <li class="lastNavList"><a class="active" href="../pages/recipe-search.html">Search Recipe</a></li>
+        </ul>
+    </div>
+
+    <div class="searchbox">
+        <div class="mod_select">
+            <div class="select_box">
+                <span class="select_txt">All</span>
+                <span class="select-icon"></span>
+                <ul class="option">
+                    <li>All</li>
+                    <li>Food</li>
+                    <li>Drink</li>
+                </ul>
+            </div>
+        </div>
+        <form action="recipe-view.html"method="get">
+            <input type="hidden" name="" value="All" id="select_value">
+            <input type="text" name="" id="searchPlaceholder" class="import" placeholder="Search for recipe">
+            <input type="submit" value="Search" class="btn-search">
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script>
+            $(function() {
+                $(".select_box").click(function(event){   
+                    event.stopPropagation();
+                    $(this).find(".option").toggle();
+                    $(this).parent().siblings().find(".option").hide();
+                });
+                $(document).click(function(event) {
+                    var eo = $(event.target);
+                    if ($(".select_box").is(":visible") && eo.attr("class") != "option" && !eo.parent(".option").length) {
+                        $('.option').hide(); 
+                    }                                   
+                });
+                $(".option li").click(function() {
+                    var check_value = $(this).text();
+                    var zlValue = $('.option li:eq(1)').html();
+                    var bqValue = $('.option li:eq(2)').html();
+
+                    $(this).parent().siblings(".select_txt").text(check_value);
+                    $("#select_value").val(check_value);
+
+                    if (check_value == zlValue) {
+                        $('#searchPlaceholder').prop('placeholder','Search for food');
+                    }
+                    else if (check_value == bqValue) {
+                        $('#searchPlaceholder').prop('placeholder','Search for drink');
+                    }
+                    else {
+                        $('#searchPlaceholder').prop('placeholder','Search for recipe');
+                    }
+                });
+            })
+    </script>
+</body>
+</html>
