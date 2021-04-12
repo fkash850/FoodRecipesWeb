@@ -1,6 +1,4 @@
-$(document).ready(function() {
-    console.log("Ready!");
-});
+console.log("Ready!");
 
 function createAccount() {
     console.log("createAccount() function");
@@ -12,5 +10,5 @@ function createAccount() {
         text += form.elements[i].value + "<br>";
     }
 
-    document.getElementById("demo").innerHTML = text;
+    document.getElementById("user").innerHTML = text;
 }
