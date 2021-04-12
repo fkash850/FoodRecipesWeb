@@ -14,5 +14,5 @@ function createAccount() {
         text += form.elements[i].value + "<br>";
     }
 
-    document.getElementById("user").innerHTML = text;
+    document.getElementById("user").innerHTML = window.location.search;
 }
