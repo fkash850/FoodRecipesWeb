@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../stylesheets/style.css">
     <link rel="stylesheet" href="../stylesheets/login-style.css">
+    <script src="../scripts/script.js" defer></script>
     <title>Food Recipes Login</title>
 </head>
 <body>
@@ -20,7 +21,7 @@
     </div>
     <br>
     <div id="container">
-        <form action="../pages/recipe-view.html" id="sign-in-form">
+        <form action="../pages/profile.html" id="sign-in-form">
             <h2>Sign in</h2>
             <div class="formfield">
                 <label for="username">Username:</label>
@@ -30,7 +31,7 @@
                 <label for="password">Password:</label>
                 <input type="password" name="password" id="password">
             </div>
-            <input type="submit" value="Login">
+            <input type="button" value="Login">
         </form>
         <img src="../images/line.png" alt="line" id="line">
         <form action="../pages/profile.html" id="create-account-form">
@@ -51,7 +52,7 @@
                 <label for="password">Password:</label>
                 <input type="password" name="password" id="password">
             </div>
-            <input type="submit" value="Register">
+            <input type="button" value="Register" onclick="createAccount()">
         </form>
     </div>
 
