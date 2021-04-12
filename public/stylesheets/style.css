@@ -87,8 +87,6 @@ li a:hover:not(.active) {
 .listItem {
     padding-bottom: 16px;
     list-style-type: none;
-    margin-left:0px;
-    padding-left:0px;
     display: inline-block;
 }
 .listItem p {
@@ -97,7 +95,6 @@ li a:hover:not(.active) {
     padding-left: 14px;
 }
 .listItem h1 {
-    text-align: left; 
     margin-bottom: 5px; 
     padding-left: 14px;
 }
@@ -139,3 +136,8 @@ li a:hover:not(.active) {
     background-color: #333;
     border: 1px solid #e7e7e7;
 }
+
+li h3 {
+    text-indent: 14.5px;
+}
+
