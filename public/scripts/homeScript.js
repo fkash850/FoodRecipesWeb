@@ -1,20 +1,20 @@
 $(document).ready(function(){
     console.log("ready");
-    doAjaxRequest();
+    AjaxRequest();
 });
 
-function doAjaxRequest(){
+function AjaxRequest(){
         $.ajax({
             type: 'GET',
             url:'https://www.themealdb.com/api/json/v1/1/random.php'
         }).done(function(response){
             console.log(response);
-            displayData(response);
+            populateRecipes(response);
         });
 }
 
 var counter = 1;
-function displayData(data){
+function populateRecipes(data){
 
     if (counter == 1) {
         let listItem = $('#firstItem');
@@ -22,7 +22,7 @@ function displayData(data){
         listItem.append($(`<p>${data.meals[0].strCategory}</p>`))
         document.getElementById("firstImage").src = data.meals[0].strMealThumb;
         counter++;
-        doAjaxRequest();
+        AjaxRequest();
     }
     else if (counter == 2) {
         let listItem = $('#secondItem');
@@ -30,7 +30,7 @@ function displayData(data){
         listItem.append($(`<p>${data.meals[0].strCategory}</p>`))
         document.getElementById("secondImage").src = data.meals[0].strMealThumb;
         counter++;
-        doAjaxRequest();
+        AjaxRequest();
     }
     else if (counter == 3) {
         let listItem = $('#thirdItem');
@@ -38,7 +38,7 @@ function displayData(data){
         listItem.append($(`<p>${data.meals[0].strCategory}</p>`))
         document.getElementById("thirdImage").src = data.meals[0].strMealThumb;
         counter++;
-        doAjaxRequest();
+        AjaxRequest();
     }
     else if (counter == 4) {
         let listItem = $('#forthItem');
@@ -46,7 +46,7 @@ function displayData(data){
         listItem.append($(`<p>${data.meals[0].strCategory}</p>`))
         document.getElementById("forthImage").src = data.meals[0].strMealThumb;
         counter++;
-        doAjaxRequest();
+        AjaxRequest();
     }
     else if (counter == 5) {
         let listItem = $('#fifthItem');
@@ -58,6 +58,4 @@ function displayData(data){
     else {
         console.log("Error");
     }
-
-
 }
