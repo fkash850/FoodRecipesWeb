@@ -18,5 +18,25 @@
             <li><a href="../pages/recipe-search.html">Search Recipe</a></li>
         </ul>
     </div>
+
+    <br><br>
+    <h2 id="result-name"></h2>
+    <h2 id="result-email"></h2>
+
+    <script>
+        var result_name = document.getElementById('result-name');
+        var nameDisplay = result_name.style.display;
+        var result_email = document.getElementById('result-email');
+        var emailDisplay = result_email.style.display;
+
+        result_name.innerHTML = sessionStorage.getItem("fname")
+            + " " + sessionStorage.getItem("lname");
+        result_email.innerHTML = sessionStorage.getItem("email");
+
+        if (nameDisplay == 'none' && emailDisplay == 'none') {
+            result_name.style.display = 'block';
+            result_email.style.display = 'block';
+        }
+    </script>
 </body>
 </html>

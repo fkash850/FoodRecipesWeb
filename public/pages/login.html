@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../stylesheets/style.css">
     <link rel="stylesheet" href="../stylesheets/login-style.css">
+    <script src="../scripts/loginScript.js"></script>
     <title>Food Recipes Login</title>
 </head>
 <body>
@@ -24,24 +25,24 @@
             <h2>Sign in</h2>
             <div class="formfield">
                 <label for="username">Username:</label>
-                <input type="text" name="username" id="username">
+                <input type="text" name="username" id="username" placeholder="Email">
             </div>
             <div class="formfield">
                 <label for="password">Password:</label>
-                <input type="password" name="password" id="password">
+                <input type="password" name="password" id="passwordLogin" placeholder="Password">
             </div>
-            <input type="submit" value="Login">
+            <input type="button" value="Login">
         </form>
         <img src="../images/line.png" alt="line" id="line">
-        <form action="../pages/profile.html" id="create-account-form">
+        <form action="../pages/recipe-view.html" id="create-account-form">
             <h2>Create an account</h2>
             <div class="formfield">
-                <label for="first">First Name:</label>
-                <input type="text" name="first" id="first">
+                <label for="fname">First Name:</label>
+                <input type="text" name="fname" id="fname">
             </div>
             <div class="formfield">
-                <label for="last">Last Name:</label>
-                <input type="text" name="last" id="last">
+                <label for="lname">Last Name:</label>
+                <input type="text" name="lname" id="lname">
             </div>
             <div class="formfield">
                 <label for="email">Email:</label>
@@ -51,7 +52,7 @@
                 <label for="password">Password:</label>
                 <input type="password" name="password" id="password">
             </div>
-            <input type="submit" value="Register">
+            <input type="submit" value="Register" onclick="loginValues()">
         </form>
     </div>
 

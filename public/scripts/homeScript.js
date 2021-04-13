@@ -16,6 +16,24 @@ function AjaxRequest(){
 var counter = 1;
 function populateRecipes(data){
 
+
+$(document).ready(function() {
+    console.log("Ready!");
+    doAjaxRequest();
+});
+
+function doAjaxRequest(){
+    $.ajax({
+        type: 'GET',
+        url:'https://www.themealdb.com/api/json/v1/1/random.php'
+    }).done(function(response) {
+        console.log(response);
+        displayData(response);
+    });
+}
+
+var counter = 1;
+function displayData(data) {
     if (counter == 1) {
         let listItem = $('#firstItem');
         listItem.append($(`<h3>${data.meals[0].strMeal}</h1>`))

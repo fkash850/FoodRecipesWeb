@@ -142,3 +142,6 @@ li h3 {
     text-indent: 14.5px;
 }
 
+#result-name, #result-email {
+    display: none;
+}

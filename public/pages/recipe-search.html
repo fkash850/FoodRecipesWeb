@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../stylesheets/style.css">
     <link rel="stylesheet" href="../stylesheets/recipe-post-style.css">
     <title>Recipe Search</title>
 </head>
@@ -61,13 +62,13 @@
                     $("#select_value").val(check_value);
 
                     if (check_value == zlValue) {
-                        $('#searchPlaceholder').prop('placeholder','Search for food');
+                        $('#searchPlaceholder').prop('placeholder', 'Search for food');
                     }
                     else if (check_value == bqValue) {
-                        $('#searchPlaceholder').prop('placeholder','Search for drink');
+                        $('#searchPlaceholder').prop('placeholder', 'Search for drink');
                     }
                     else {
-                        $('#searchPlaceholder').prop('placeholder','Search for recipe');
+                        $('#searchPlaceholder').prop('placeholder', 'Search for recipe');
                     }
                 });
             })
