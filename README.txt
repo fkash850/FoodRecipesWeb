@@ -1,0 +1,1 @@
+To start the website, open command prompt and navigate to the source folder of the project. Run the npm start command. Navigate to 127.0.0.1:3000. Members that were contributed were Chase Eckenrode, Fahim Kashem, and Kunlong Li. One member didn't participated: Aidan Daly. 
