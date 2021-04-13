@@ -1,7 +1,3 @@
-$(document).ready(function() {
-    console.log("Ready!");
-});
-
 /* https://github.com/RajnishKatharotiya/share-data-between-html-pages */
 function loginValues() {
     console.log("loginValues() function");
