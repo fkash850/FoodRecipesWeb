@@ -2,11 +2,17 @@ $(document).ready(function() {
     console.log("Ready!");
 });
 
-window.addEventListener('load', () => {
-    const params = (new URL(document.location)).searchParams;
-    const user = params.get('fname') + " " + params.get('lname');
-    const email = params.get('email');
+/* https://github.com/RajnishKatharotiya/share-data-between-html-pages */
+function loginValues() {
+    console.log("loginValues() function");
 
-    document.getElementById('result-user').innerHTML = user;
-    document.getElementById('result-email').innerHTML = email;
-})
+    let fname = document.getElementById('fname').value;
+    let lname = document.getElementById('lname').value;
+    let email = document.getElementsByClassName('email').value;
+
+    sessionStorage.setItem("fname", fname);
+    sessionStorage.setItem("lname", lname);
+    sessionStorage.setItem("email", email);
+
+    return false;
+}

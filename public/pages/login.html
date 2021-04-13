@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../stylesheets/style.css">
     <link rel="stylesheet" href="../stylesheets/login-style.css">
+    <script src="../scripts/loginScript.js"></script>
     <title>Food Recipes Login</title>
 </head>
 <body>
@@ -20,7 +21,7 @@
     </div>
     <br>
     <div id="container">
-        <form action="../pages/profile.html" id="sign-in-form" method="GET">
+        <form action="../pages/profile.html" id="sign-in-form">
             <h2>Sign in</h2>
             <div class="formfield">
                 <label for="usernameLogin">Username:</label>
@@ -33,7 +34,7 @@
             <input type="button" value="Login">
         </form>
         <img src="../images/line.png" alt="line" id="line">
-        <form action="../pages/profile.html" id="create-account-form" method="GET">
+        <form action="../pages/profile.html" id="create-account-form">
             <h2>Create an account</h2>
             <div class="formfield">
                 <label for="fname">First Name:</label>
@@ -45,13 +46,13 @@
             </div>
             <div class="formfield">
                 <label for="email">Email:</label>
-                <input type="text" name="email" id="email">
+                <input type="text" name="email" class="email">
             </div>
             <div class="formfield">
                 <label for="password">Password:</label>
-                <input type="password" name="password" id="password">
+                <input type="password" name="password" class="password">
             </div>
-            <input type="button" value="Register">
+            <input type="button" value="Register" onclick="loginValues()">
         </form>
     </div>
 
