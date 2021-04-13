@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../stylesheets/style.css">
     <link rel="stylesheet" href="../stylesheets/index-style.css">
+    <script
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous">
+    </script>
+    <script src="../scripts/homeScript.js"></script>
     <title>Food Recipes</title>
 </head>
 <body>
@@ -21,7 +27,10 @@
     <h1>Food Recipes</h1>
     
     <h4>Click the button below to login or create an account!</h4>
-    <button onclick="openLogin()">Login</button>
+    <!-- Gotten from here: https://stackoverflow.com/a/2906586  -->
+    <form class="loginButton" action="./pages/login.html">
+        <input type="submit" value="Login" />
+    </form>
 
     <img src="../images/food1.png" alt="food-1" id="food-1">
     <img src="../images/food2.png" alt="food-2" id="food-2">
@@ -61,7 +70,5 @@
             </ul>
         </div>
     </main>
-    
-    <script src="../scripts/script.js" defer></script>
 </body>
 </html>

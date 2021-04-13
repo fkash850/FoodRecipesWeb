@@ -20,28 +20,28 @@
     </div>
     <br>
     <div id="container">
-        <form action="../pages/profile.html" id="sign-in-form">
+        <form action="../pages/profile.html" id="sign-in-form" method="GET">
             <h2>Sign in</h2>
             <div class="formfield">
-                <label for="username">Username:</label>
-                <input type="text" name="username" id="username">
+                <label for="usernameLogin">Username:</label>
+                <input type="text" name="email" class="email" placeholder="Email">
             </div>
             <div class="formfield">
-                <label for="password">Password:</label>
-                <input type="password" name="password" id="password">
+                <label for="passwordLogin">Password:</label>
+                <input type="password" name="password" class="password" placeholder="Password">
             </div>
             <input type="button" value="Login">
         </form>
         <img src="../images/line.png" alt="line" id="line">
-        <form action="../pages/profile.html" id="create-account-form">
+        <form action="../pages/profile.html" id="create-account-form" method="GET">
             <h2>Create an account</h2>
             <div class="formfield">
-                <label for="first">First Name:</label>
-                <input type="text" name="first" id="first">
+                <label for="fname">First Name:</label>
+                <input type="text" name="fname" id="fname">
             </div>
             <div class="formfield">
-                <label for="last">Last Name:</label>
-                <input type="text" name="last" id="last">
+                <label for="lname">Last Name:</label>
+                <input type="text" name="lname" id="lname">
             </div>
             <div class="formfield">
                 <label for="email">Email:</label>
@@ -51,14 +51,12 @@
                 <label for="password">Password:</label>
                 <input type="password" name="password" id="password">
             </div>
-            <input type="button" value="Register" onclick="createAccount()">
+            <input type="button" value="Register">
         </form>
     </div>
 
     <img src="../images/food1.png" alt="food-1" id="food-1">
     <img src="../images/food2.png" alt="food-2" id="food-2">
     <img src="../images/food3.png" alt="food-3" id="food-3">
-    
-    <script src="../scripts/script.js" defer></script>
 </body>
 </html>
