@@ -20,13 +20,23 @@
     </div>
 
     <br>
-    <h2 id="result-name"></h2>
-    <h2 id="result-email"></h2>
+    <h2 id="result-name" style="display: none;"></h2>
+    <h2 id="result-email" style="display: none;"></h2>
 
     <script>
-        document.getElementById('result-name').innerHTML = sessionStorage.getItem("fname")
+        var result_name = document.getElementById('result-name');
+        var nameDisplay = result_name.style.display;
+        var result_email = document.getElementById('result-email');
+        var emailDisplay = result_email.style.display;
+
+        result_name.innerHTML = sessionStorage.getItem("fname")
             + " " + sessionStorage.getItem("lname");
-        document.getElementById('result-email').innerHTML = sessionStorage.getItem("email");
+        result_email.innerHTML = sessionStorage.getItem("email");
+
+        if (nameDisplay == 'none' && emailDisplay == 'none') {
+            result_name.style.display = 'block';
+            result_email.style.display = 'block';
+        }
     </script>
 </body>
 </html>
