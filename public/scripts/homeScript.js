@@ -8,7 +8,6 @@ function AjaxRequest(){
             type: 'GET',
             url:'https://www.themealdb.com/api/json/v1/1/random.php'
         }).done(function(response){
-            console.log(response);
             populateRecipes(response);
 
         });
