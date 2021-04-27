@@ -25,7 +25,7 @@ function changeRecipe(data) {
     document.getElementById('title').append(image);
     var x = new Boolean(true);
     while(x) {
-        if (data.meals[0].strIngredient1 === "NaN" || data.meals[0].strIngredient1 === "") {
+        if (data.meals[0].strIngredient1 === "NaN" || data.meals[0].strIngredient1 === "" || data.meals[0].strIngredient1 === "null") {
             x = false;
         }
         else {
@@ -35,7 +35,7 @@ function changeRecipe(data) {
             var text = str1 + " " + ing1;
             $("#IngrList").append($("<li>").html(text));
         }
-        if (data.meals[0].strIngredient2 === "NaN" || data.meals[0].strIngredient2 === "") {
+        if (data.meals[0].strIngredient2 === "NaN" || data.meals[0].strIngredient2 === "" || data.meals[0].strIngredient2 === "null") {
             x = false;
         }
         else {
@@ -45,7 +45,7 @@ function changeRecipe(data) {
             var text = str1 + " " + ing1;
             $("#IngrList").append($("<li>").html(text));
         }
-        if (data.meals[0].strIngredient3 === "NaN" || data.meals[0].strIngredient3 === "") {
+        if (data.meals[0].strIngredient3 === "NaN" || data.meals[0].strIngredient3 === "" || data.meals[0].strIngredient3 === "null") {
             x = false;
         }
         else {
@@ -55,7 +55,7 @@ function changeRecipe(data) {
             var text = str1 + " " + ing1;
             $("#IngrList").append($("<li>").html(text));
         }
-        if (data.meals[0].strIngredient4 === "NaN" || data.meals[0].strIngredient4 === "") {
+        if (data.meals[0].strIngredient4 === "NaN" || data.meals[0].strIngredient4 === "" || data.meals[0].strIngredient4 === "null") {
             x = false;
         }
         else {
@@ -65,7 +65,7 @@ function changeRecipe(data) {
             var text = str1 + " " + ing1;
             $("#IngrList").append($("<li>").html(text));
         }
-        if (data.meals[0].strIngredient5 === "NaN" || data.meals[0].strIngredient5 === "") {
+        if (data.meals[0].strIngredient5 === "NaN" || data.meals[0].strIngredient5 === "" || data.meals[0].strIngredient5 === "null") {
             x = false;
         }
         else {
@@ -75,7 +75,7 @@ function changeRecipe(data) {
             var text = str1 + " " + ing1;
             $("#IngrList").append($("<li>").html(text));
         }
-        if (data.meals[0].strIngredient6 === "NaN" || data.meals[0].strIngredient6 === "") {
+        if (data.meals[0].strIngredient6 === "NaN" || data.meals[0].strIngredient6 === "" || data.meals[0].strIngredient6 === "null") {
             x = false;
         }
         else {
@@ -85,7 +85,7 @@ function changeRecipe(data) {
             var text = str1 + " " + ing1;
             $("#IngrList").append($("<li>").html(text));
         }
-        if (data.meals[0].strIngredient7 === "NaN" || data.meals[0].strIngredient7 === "") {
+        if (data.meals[0].strIngredient7 === "NaN" || data.meals[0].strIngredient7 === "" || data.meals[0].strIngredient7 === "null") {
             x = false;
         }
         else {
@@ -95,7 +95,7 @@ function changeRecipe(data) {
             var text = str1 + " " + ing1;
             $("#IngrList").append($("<li>").html(text));
         }
-        if (data.meals[0].strIngredient8 === "NaN" || data.meals[0].strIngredient8 === "") {
+        if (data.meals[0].strIngredient8 === "NaN" || data.meals[0].strIngredient8 === "" || data.meals[0].strIngredient8 === "null") {
             x = false;
         }
         else {
@@ -105,7 +105,7 @@ function changeRecipe(data) {
             var text = str1 + " " + ing1;
             $("#IngrList").append($("<li>").html(text));
         }
-        if (data.meals[0].strIngredient9 === "NaN" || data.meals[0].strIngredient9 === "") {
+        if (data.meals[0].strIngredient9 === "NaN" || data.meals[0].strIngredient9 === "" || data.meals[0].strIngredient9 === "null") {
             x = false;
         }
         else {
@@ -115,7 +115,7 @@ function changeRecipe(data) {
             var text = str1 + " " + ing1;
             $("#IngrList").append($("<li>").html(text));
         }
-        if (data.meals[0].strIngredient10 === "NaN" || data.meals[0].strIngredient10 === "") {
+        if (data.meals[0].strIngredient10 === "NaN" || data.meals[0].strIngredient10 === "" || data.meals[0].strIngredient10 === "null") {
             x = false;
         }
         else {
@@ -125,7 +125,7 @@ function changeRecipe(data) {
             var text = str1 + " " + ing1;
             $("#IngrList").append($("<li>").html(text));
         }
-        if (data.meals[0].strIngredient11 === "NaN" || data.meals[0].strIngredient11 === "") {
+        if (data.meals[0].strIngredient11 === "NaN" || data.meals[0].strIngredient11 === "" || data.meals[0].strIngredient11 === "null") {
             x = false;
         }
         else {
@@ -135,7 +135,7 @@ function changeRecipe(data) {
             var text = str1 + " " + ing1;
             $("#IngrList").append($("<li>").html(text));
         }
-        if (data.meals[0].strIngredient12 === "NaN" || data.meals[0].strIngredient12 === "") {
+        if (data.meals[0].strIngredient12 === "NaN" || data.meals[0].strIngredient12 === "" || data.meals[0].strIngredient12 === "null") {
             x = false;
         }
         else {
@@ -145,7 +145,7 @@ function changeRecipe(data) {
             var text = str1 + " " + ing1;
             $("#IngrList").append($("<li>").html(text));
         }
-        if (data.meals[0].strIngredient13 === "NaN" || data.meals[0].strIngredient13 === "") {
+        if (data.meals[0].strIngredient13 === "NaN" || data.meals[0].strIngredient13 === "" || data.meals[0].strIngredient13 === "null") {
             x = false;
         }
         else {
@@ -155,7 +155,7 @@ function changeRecipe(data) {
             var text = str1 + " " + ing1;
             $("#IngrList").append($("<li>").html(text));
         }
-        if (data.meals[0].strIngredient14 === "NaN" || data.meals[0].strIngredient14 === "") {
+        if (data.meals[0].strIngredient14 === "NaN" || data.meals[0].strIngredient14 === "" || data.meals[0].strIngredient14 === "null") {
             x = false;
         }
         else {
@@ -165,7 +165,7 @@ function changeRecipe(data) {
             var text = str1 + " " + ing1;
             $("#IngrList").append($("<li>").html(text));
         }
-        if (data.meals[0].strIngredient15 === "NaN" || data.meals[0].strIngredient15 === "") {
+        if (data.meals[0].strIngredient15 === "NaN" || data.meals[0].strIngredient15 === "" || data.meals[0].strIngredient15 === "null") {
             x = false;
         }
         else {
@@ -175,7 +175,7 @@ function changeRecipe(data) {
             var text = str1 + " " + ing1;
             $("#IngrList").append($("<li>").html(text));
         }
-        if (data.meals[0].strIngredient16 === "NaN" || data.meals[0].strIngredient16 === "") {
+        if (data.meals[0].strIngredient16 === "NaN" || data.meals[0].strIngredient16 === "" || data.meals[0].strIngredient16 === "null") {
             x = false;
         }
         else {
@@ -185,7 +185,7 @@ function changeRecipe(data) {
             var text = str1 + " " + ing1;
             $("#IngrList").append($("<li>").html(text));
         }
-        if (data.meals[0].strIngredient17 === "NaN" || data.meals[0].strIngredient17 === "") {
+        if (data.meals[0].strIngredient17 === "NaN" || data.meals[0].strIngredient17 === "" || data.meals[0].strIngredient17 === "null") {
             x = false;
         }
         else {
@@ -195,7 +195,7 @@ function changeRecipe(data) {
             var text = str1 + " " + ing1;
             $("#IngrList").append($("<li>").html(text));
         }
-        if (data.meals[0].strIngredient18 === "NaN" || data.meals[0].strIngredient18 === "") {
+        if (data.meals[0].strIngredient18 === "NaN" || data.meals[0].strIngredient18 === "" || data.meals[0].strIngredient18 === "null") {
             x = false;
         }
         else {
@@ -205,7 +205,7 @@ function changeRecipe(data) {
             var text = str1 + " " + ing1;
             $("#IngrList").append($("<li>").html(text));
         }
-        if (data.meals[0].strIngredient19 === "NaN" || data.meals[0].strIngredient19 === "") {
+        if (data.meals[0].strIngredient19 === "NaN" || data.meals[0].strIngredient19 === "" || data.meals[0].strIngredient19 === "null") {
             x = false;
         }
         else {
@@ -215,7 +215,7 @@ function changeRecipe(data) {
             var text = str1 + " " + ing1;
             $("#IngrList").append($("<li>").html(text));
         }
-        if (data.meals[0].strIngredient20 === "NaN" || data.meals[0].strIngredient20 === "") {
+        if (data.meals[0].strIngredient20 === "NaN" || data.meals[0].strIngredient20 === "" || data.meals[0].strIngredient20 === "null") {
             x = false;
         }
         else {
