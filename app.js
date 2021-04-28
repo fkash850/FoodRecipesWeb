@@ -21,7 +21,7 @@ app.use('/users', usersRouter);
 app.use('/meals', mealsRouter);
 
 // Create a user from the create-account form
-app.post("../pages/profile", function(req, res) {    
+app.post("/create", function(req, res) {    
     const user = new FoodRecipes({
         fname: req.body.fname,
         lname: req.body.lname,
