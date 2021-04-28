@@ -3,11 +3,10 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-// const FoodRecipes = require('./routes/foodrecipe');
-
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var mealsRouter = require('./routes/meals');
+const FoodRecipes = require('./routes/foodrecipe');
 
 var app = express();
 
@@ -21,8 +20,8 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/meals', mealsRouter);
 
-app.post("../pages/profile.html", function(req, res) {
-    // Create a user from the create-account form
+// Create a user from the create-account form
+app.post("../pages/profile.html", function(req, res) {    
     const user = new FoodRecipes({
         fname: req.body.fname,
         lname: req.body.lname,
@@ -35,7 +34,7 @@ app.post("../pages/profile.html", function(req, res) {
             res.status(400).send(err);
         }
         else {
-            alert("User is created");
+            res.send("User is created");
         }
     });
 });
