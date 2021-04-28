@@ -5,4 +5,4 @@ mongoose.set("useUnifiedTopology", true);
 mongoose.connect("mongodb+srv://dbUser:ist256@foodrecipescluster.xonsv.mongodb.net/foodRecipesDB?retryWrites=true&w=majority", 
     { useNewUrlParser: true });
 
-    module.exports = mongoose;
+module.exports = mongoose;

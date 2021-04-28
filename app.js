@@ -21,7 +21,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/meals', mealsRouter);
 
-/*app.post("", function(req, res) {
+app.post("../public/pages/recipe-view.html", function(req, res) {
     // Create a user from the create-account form
     const user = new FoodRecipes({
         fname: req.body.fname,
@@ -30,14 +30,14 @@ app.use('/meals', mealsRouter);
         password: req.body.password
     });
 
-    user.save(function(err, user)) {
+    user.save(function(err, user) {
         if (err) {
             res.status(400).send(err);
         }
         else {
-            res.send("User is created");
+            alert("User is created");
         }
-    }
-});*/
+    });
+});
 
 module.exports = app;
