@@ -17,6 +17,23 @@ a:last-child div {
     border-bottom-right-radius: 4px;
 }
 
+#title h3 {
+    font-size: 18px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+#title h2 {
+    font-size: 40px;
+    text-align: center;
+    text-decoration: underline;
+}
+
+#title img {
+    max-width: 250px;
+    max-height: 250px;
+}
+
 .navList {
     display: flex;
     justify-content: space-between;
@@ -36,7 +53,7 @@ a:last-child div {
     padding-right: 50px;
 }
 
-ul {
+.list {
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -48,10 +65,23 @@ ul {
     border: 1px solid #e7e7e7;
 }
 
-li:first-child {
+#IngrList {
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    justify-content: space-between;
+    width: 100%;
+    background-color: #333;
+    border: 1px solid #e7e7e7;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 16px;
+}
+
+li:first-child .list {
     padding-left: 50px;
 }
-li:last-child {
+li:last-child .list {
     padding-right: 50px;
 }
 li a {

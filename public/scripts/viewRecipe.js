@@ -8,7 +8,7 @@ function AjaxRequestPasta() {
         type: 'GET',
         url: 'https://www.themealdb.com/api/json/v1/1/filter.php?c=Pasta'
     }).done(function (response) {
-        populateRecipes(response);
+        pastaRecipes(response);
     });
 }
 
@@ -17,7 +17,7 @@ function AjaxRequestSeafood() {
         type: 'GET',
         url: 'https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood'
     }).done(function (response) {
-        populateRecipes(response);
+        seafoodRecipes(response);
     });
 }
 
@@ -26,8 +26,7 @@ function AjaxRequestBreakfast() {
         type: 'GET',
         url: 'https://www.themealdb.com/api/json/v1/1/filter.php?c=Breakfast'
     }).done(function (response) {
-        console.log(response);
-        populateRecipes(response);
+        breakfastRecipes(response);
     });
 }
 
@@ -36,8 +35,7 @@ function AjaxRequestDesserts() {
         type: 'GET',
         url: 'https://www.themealdb.com/api/json/v1/1/filter.php?c=Dessert'
     }).done(function (response) {
-        console.log(response);
-        populateRecipes(response);
+        dessertRecipes(response);
     });
 }
 
@@ -45,332 +43,358 @@ var pastaCounter = 1;
 var seafoodCounter = 1;
 var breakfastCounter = 1;
 var dessertsCounter = 1;
-var array = [];
-
-//Code used from: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
-function randomInt(max) {
-    if (pastaCounter > 5) {
-        array = []
-    }
-    else if (seafoodCounter > 5) {
-        array = []
-    }
-    else if (breakfastCounter > 5) {
-        array = []
-    }
-    else if (dessertsCounter > 5) {
-        array = []
-    }
-
-
-    var randomNumber = Math.floor(Math.random() * max)
-    while (array.includes(randomNum)) {
-        randomNumber = Math.floor(Math.random() * max)
-    }
-    array.push(randomNumber);
-    return randomNumber;
-
-}
-
 var pastaMax = 8;
 var seafoodMax = 24;
 var breakfastMax = 7;
 var dessertMax = 8;
-var randomNum = 0;
 var checkNum = 0;
-function populateRecipes(data) {
-    if (pastaCounter <= 5) {
-        if (pastaCounter == 1) {
-            var randomNum = randomInt(pastaMax);
-            while (checkNum == randomNum) {
-                var randomNum = randomInt(pastaMax);
+mealIdArray = [];
+pastaArray = [];
+seafoodArray = [];
+breakfastArray = [];
+dessertArray = [];
+
+function pastaRecipes(data) {
+    if (pastaCounter == 1) {
+        for (var j = 0; j <= 4; j++) {
+            randomNumber = Math.floor(Math.random() * pastaMax)
+            while (pastaArray.includes(randomNumber)) {
+                console.log("edfg");
+                randomNumber = Math.floor(Math.random() * pastaMax)
             }
-            let listItem = $('#firstItemPasta');
-            listItem.append($(`<h3>${data.meals[randomNum].strMeal}</h3>`))
-            document.getElementById("firstImagePasta").src = data.meals[randomNum].strMealThumb;
-            pastaCounter++;
-            checkNum = randomNum;
-            AjaxRequestPasta();
+            pastaArray.push(randomNumber);
         }
-        else if (pastaCounter == 2) {
-            var randomNum = randomInt(pastaMax);
-            while (checkNum == randomNum) {
-                var randomNum = randomInt(pastaMax);
-            }
-            let listItem = $('#secondItemPasta');
-            listItem.append($(`<h3>${data.meals[randomNum].strMeal}</h3>`))
-            document.getElementById("secondImagePasta").src = data.meals[randomNum].strMealThumb;
-            pastaCounter++;
-            checkNum = randomNum;
-            AjaxRequestPasta();
-        }
-        else if (pastaCounter == 3) {
-            var randomNum = randomInt(pastaMax);
-            while (checkNum == randomNum) {
-                var randomNum = randomInt(pastaMax);
-            }
-            let listItem = $('#thirdItemPasta');
-            listItem.append($(`<h3>${data.meals[randomNum].strMeal}</h3>`))
-            document.getElementById("thirdImagePasta").src = data.meals[randomNum].strMealThumb;
-            pastaCounter++;
-            checkNum = randomNum;
-            AjaxRequestPasta();
-        }
-        else if (pastaCounter == 4) {
-            var randomNum = randomInt(pastaMax);
-            while (checkNum == randomNum) {
-                var randomNum = randomInt(pastaMax);
-            }
-            let listItem = $('#forthItemPasta');
-            listItem.append($(`<h3>${data.meals[randomNum].strMeal}</h3>`))
-            document.getElementById("forthImagePasta").src = data.meals[randomNum].strMealThumb;
-            pastaCounter++;
-            checkNum = randomNum;
-            AjaxRequestPasta();
-        }
-        else if (pastaCounter == 5) {
-            var randomNum = randomInt(pastaMax);
-            while (checkNum == randomNum) {
-                var randomNum = randomInt(pastaMax);
-            }
-            let listItem = $('#fifthItemPasta');
-            listItem.append($(`<h3>${data.meals[randomNum].strMeal}</h3>`))
-            document.getElementById("fifthImagePasta").src = data.meals[randomNum].strMealThumb;
-            pastaCounter++;
-            AjaxRequestSeafood();
-            console.log(pastaCounter);
-        }
-        else {
-            console.log("Error");
-        }
+        let listItem = $('#firstItemPasta');
+        listItem.append($(`<h3>${data.meals[pastaArray[0]].strMeal}</h3>`))
+        document.getElementById("firstImagePasta").src = data.meals[pastaArray[0]].strMealThumb;
+        mealIdArray.push(data.meals[pastaArray[0]].idMeal);
+        console.log(data.meals[pastaArray[0]].idMeal);
+        pastaCounter++;
+        AjaxRequestPasta();
     }
-    else if (pastaCounter > 5) {
-        if (seafoodCounter <= 5) {
-            if (seafoodCounter == 1) {
-                var randomNum = randomInt(seafoodMax);
-                while (checkNum == randomNum) {
-                    var randomNum = randomInt(seafoodMax);
-                }
-                let listItem = $('#firstItemseafood');
-                listItem.append($(`<h3>${data.meals[randomNum].strMeal}</h3>`))
-                document.getElementById("firstImageseafood").src = data.meals[randomNum].strMealThumb;
-                seafoodCounter++;
-                checkNum = randomNum;
-                AjaxRequestSeafood();
+    else if (pastaCounter == 2) {
+        let listItem = $('#secondItemPasta');
+        listItem.append($(`<h3>${data.meals[pastaArray[1]].strMeal}</h3>`))
+        document.getElementById("secondImagePasta").src = data.meals[pastaArray[1]].strMealThumb;
+        mealIdArray.push(data.meals[pastaArray[1]].idMeal);
+        pastaCounter++;
+        AjaxRequestPasta();
+    }
+    else if (pastaCounter == 3) {
+        let listItem = $('#thirdItemPasta');
+        listItem.append($(`<h3>${data.meals[pastaArray[2]].strMeal}</h3>`))
+        document.getElementById("thirdImagePasta").src = data.meals[pastaArray[2]].strMealThumb;
+        mealIdArray.push(data.meals[pastaArray[2]].idMeal);
+        pastaCounter++;
+        AjaxRequestPasta();
+    }
+    else if (pastaCounter == 4) {
+        let listItem = $('#forthItemPasta');
+        listItem.append($(`<h3>${data.meals[pastaArray[3]].strMeal}</h3>`))
+        document.getElementById("forthImagePasta").src = data.meals[pastaArray[3]].strMealThumb;
+        mealIdArray.push(data.meals[pastaArray[3]].idMeal);
+        pastaCounter++;
+        AjaxRequestPasta();
+    }
+    else if (pastaCounter == 5) {
+        let listItem = $('#fifthItemPasta');
+        listItem.append($(`<h3>${data.meals[pastaArray[4]].strMeal}</h3>`))
+        document.getElementById("fifthImagePasta").src = data.meals[pastaArray[4]].strMealThumb;
+        mealIdArray.push(data.meals[pastaArray[4]].idMeal);
+        pastaCounter++;
+        console.log("Pasta done");
+        AjaxRequestSeafood();
+    }
+    else {
+        console.log("Error");
+    }
+}
 
+function seafoodRecipes(data) {
+    if (seafoodCounter == 1) {
+        for (var j = 0; j <= 4; j++) {
+            randomNumber = Math.floor(Math.random() * seafoodMax)
+            while (seafoodArray.includes(randomNumber)) {
+                randomNumber = Math.floor(Math.random() * seafoodMax)
             }
-            else if (seafoodCounter == 2) {
-                var randomNum = randomInt(seafoodMax);
-                while (checkNum == randomNum) {
-                    var randomNum = randomInt(seafoodMax);
-                }
-                let listItem = $('#secondItemseafood');
-                listItem.append($(`<h3>${data.meals[randomNum].strMeal}</h3>`))
-                document.getElementById("secondImageseafood").src = data.meals[randomNum].strMealThumb;
-                seafoodCounter++;
-                checkNum = randomNum;
-                AjaxRequestSeafood();
-            }
-            else if (seafoodCounter == 3) {
-                var randomNum = randomInt(seafoodMax);
-                while (checkNum == randomNum) {
-                    var randomNum = randomInt(seafoodMax);
-                }
-                let listItem = $('#thirdItemseafood');
-                listItem.append($(`<h3>${data.meals[randomNum].strMeal}</h3>`))
-                document.getElementById("thirdImageseafood").src = data.meals[randomNum].strMealThumb;
-                seafoodCounter++;
-                checkNum = randomNum;
-                AjaxRequestSeafood();
-            }
-            else if (seafoodCounter == 4) {
-                var randomNum = randomInt(seafoodMax);
-                while (checkNum == randomNum) {
-                    var randomNum = randomInt(seafoodMax);
-                }
-                let listItem = $('#forthItemseafood');
-                listItem.append($(`<h3>${data.meals[randomNum].strMeal}</h3>`))
-                document.getElementById("forthImageseafood").src = data.meals[randomNum].strMealThumb;
-                seafoodCounter++;
-                checkNum = randomNum;
-                AjaxRequestSeafood();
-            }
-            else if (seafoodCounter == 5) {
-                var randomNum = randomInt(seafoodMax);
-                while (checkNum == randomNum) {
-                    var randomNum = randomInt(seafoodMax);
-                }
-                let listItem = $('#fifthItemseafood');
-                listItem.append($(`<h3>${data.meals[randomNum].strMeal}</h3>`))
-                document.getElementById("fifthImageseafood").src = data.meals[randomNum].strMealThumb;
-                seafoodCounter++;
-                AjaxRequestBreakfast();
-            }
-            else {
-                console.log("Error");
-            }
+            seafoodArray.push(randomNumber);
         }
-        // BreakFast
-        else if (breakfastCounter <= 5) {
-            if (breakfastCounter == 1) {
-                var randomNum = randomInt(breakfastMax);
-                while (checkNum == randomNum) {
-                    console.log("heldfdf")
-                    var randomNum = randomInt(breakfastMax);
-                }
-                console.log(breakfastMax);
-                console.log(randomNum);
-                let listItem = $('#firstItembreakfastfood');
-                listItem.append($(`<h3>${data.meals[randomNum].strMeal}</h3>`))
-                document.getElementById("firstImagebreakfastfood").src = data.meals[randomNum].strMealThumb;
-                breakfastCounter++;
-                checkNum = randomNum;
-                AjaxRequestBreakfast();
+        let listItem = $('#firstItemseafood');
+        listItem.append($(`<h3>${data.meals[seafoodArray[0]].strMeal}</h3>`))
+        document.getElementById("firstImageseafood").src = data.meals[seafoodArray[0]].strMealThumb;
+        mealIdArray.push(data.meals[seafoodArray[0]].idMeal);
+        seafoodCounter++;
+        AjaxRequestSeafood();
 
-            }
-            else if (breakfastCounter == 2) {
-                var randomNum = randomInt(breakfastMax);
-                while (checkNum == randomNum) {
-                    console.log("heldfdf")
-                    var randomNum = randomInt(breakfastMax);
-                }
-                console.log(breakfastMax);
-                console.log(randomNum);
-                let listItem = $('#secondItembreakfastfood');
-                listItem.append($(`<h3>${data.meals[randomNum].strMeal}</h3>`))
-                document.getElementById("secondImagebreakfastfood").src = data.meals[randomNum].strMealThumb;
-                breakfastCounter++;
-                checkNum = randomNum;
-                AjaxRequestBreakfast();
-            }
-            else if (breakfastCounter == 3) {
-                var randomNum = randomInt(breakfastMax);
-                while (checkNum == randomNum) {
-                    console.log("heldfdf")
-                    var randomNum = randomInt(breakfastMax);
-                }
-                console.log(breakfastMax);
-                console.log(randomNum);
-                let listItem = $('#thirdItembreakfastfood');
-                listItem.append($(`<h3>${data.meals[randomNum].strMeal}</h3>`))
-                document.getElementById("thirdImagebreakfastfood").src = data.meals[randomNum].strMealThumb;
-                breakfastCounter++;
-                checkNum = randomNum;
-                AjaxRequestBreakfast();
-            }
-            else if (breakfastCounter == 4) {
-                var randomNum = randomInt(breakfastMax);
-                while (checkNum == randomNum) {
-                    console.log("heldfdf")
-                    var randomNum = randomInt(breakfastMax);
-                }
-                console.log(breakfastMax);
-                console.log(randomNum);
-                let listItem = $('#forthItembreakfastfood');
-                listItem.append($(`<h3>${data.meals[randomNum].strMeal}</h3>`))
-                document.getElementById("forthImagebreakfastfood").src = data.meals[randomNum].strMealThumb;
-                breakfastCounter++;
-                checkNum = randomNum;
-                AjaxRequestBreakfast();
-            }
-            else if (breakfastCounter == 5) {
-                var randomNum = randomInt(breakfastMax);
-                while (checkNum == randomNum) {
-                    console.log("heldfdf")
-                    var randomNum = randomInt(breakfastMax);
-                }
-                console.log(breakfastMax);
-                console.log(randomNum);
-                let listItem = $('#fifthItembreakfastfood');
-                listItem.append($(`<h3>${data.meals[randomNum].strMeal}</h3>`))
-                document.getElementById("fifthImagebreakfastfood").src = data.meals[randomNum].strMealThumb;
-                breakfastCounter++;
-                AjaxRequestDesserts();
-            }
-            else {
-                console.log("Error");
-            }
-        }
-        // Desserts
-        else if (dessertsCounter <= 5) {
-            if (dessertsCounter == 1) {
-                var randomNum = randomInt(dessertMax);
-                while (checkNum == randomNum) {
-                    console.log("heldfdf")
-                    var randomNum = randomInt(dessertMax);
-                }
-                console.log(dessertMax);
-                console.log(randomNum);
-                let listItem = $('#firstItemdesserts');
-                listItem.append($(`<h3>${data.meals[randomNum].strMeal}</h3>`))
-                document.getElementById("firstImagedesserts").src = data.meals[randomNum].strMealThumb;
-                dessertsCounter++;
-                checkNum = randomNum;
-                AjaxRequestDesserts();
+    }
+    else if (seafoodCounter == 2) {
+        let listItem = $('#secondItemseafood');
+        listItem.append($(`<h3>${data.meals[seafoodArray[1]].strMeal}</h3>`))
+        document.getElementById("secondImageseafood").src = data.meals[seafoodArray[1]].strMealThumb;
+        mealIdArray.push(data.meals[seafoodArray[1]].idMeal);
+        seafoodCounter++;
+        AjaxRequestSeafood();
+    }
+    else if (seafoodCounter == 3) {
 
+        let listItem = $('#thirdItemseafood');
+        listItem.append($(`<h3>${data.meals[seafoodArray[2]].strMeal}</h3>`))
+        document.getElementById("thirdImageseafood").src = data.meals[seafoodArray[2]].strMealThumb;
+        mealIdArray.push(data.meals[seafoodArray[2]].idMeal);
+        seafoodCounter++;
+        AjaxRequestSeafood();
+    }
+    else if (seafoodCounter == 4) {
+
+        let listItem = $('#forthItemseafood');
+        listItem.append($(`<h3>${data.meals[seafoodArray[3]].strMeal}</h3>`))
+        document.getElementById("forthImageseafood").src = data.meals[seafoodArray[3]].strMealThumb;
+        mealIdArray.push(data.meals[seafoodArray[3]].idMeal);
+        seafoodCounter++;
+        AjaxRequestSeafood();
+    }
+    else if (seafoodCounter == 5) {
+
+        let listItem = $('#fifthItemseafood');
+        listItem.append($(`<h3>${data.meals[seafoodArray[4]].strMeal}</h3>`))
+        document.getElementById("fifthImageseafood").src = data.meals[seafoodArray[4]].strMealThumb;
+        mealIdArray.push(data.meals[seafoodArray[4]].idMeal);
+        seafoodCounter++;
+        console.log("Seafood done");
+        AjaxRequestBreakfast();
+    }
+    else {
+        console.log("Error");
+    }
+}
+
+function breakfastRecipes(data) {
+    if (breakfastCounter == 1) {
+        for (var j = 0; j <= 4; j++) {
+            randomNumber = Math.floor(Math.random() * breakfastMax)
+            while (breakfastArray.includes(randomNumber)) {
+                randomNumber = Math.floor(Math.random() * breakfastMax)
             }
-            else if (dessertsCounter == 2) {
-                var randomNum = randomInt(dessertMax);
-                while (checkNum == randomNum) {
-                    console.log("heldfdf")
-                    var randomNum = randomInt(dessertMax);
-                }
-                console.log(dessertMax);
-                console.log(randomNum);
-                let listItem = $('#secondItemdesserts');
-                listItem.append($(`<h3>${data.meals[randomNum].strMeal}</h3>`))
-                document.getElementById("secondImagedesserts").src = data.meals[randomNum].strMealThumb;
-                dessertsCounter++;
-                checkNum = randomNum;
-                AjaxRequestDesserts();
-            }
-            else if (dessertsCounter == 3) {
-                var randomNum = randomInt(dessertMax);
-                while (checkNum == randomNum) {
-                    console.log("heldfdf")
-                    var randomNum = randomInt(dessertMax);
-                }
-                console.log(dessertMax);
-                console.log(randomNum);
-                let listItem = $('#thirdItemdesserts');
-                listItem.append($(`<h3>${data.meals[randomNum].strMeal}</h3>`))
-                document.getElementById("thirdImagedesserts").src = data.meals[randomNum].strMealThumb;
-                dessertsCounter++;
-                checkNum = randomNum;
-                AjaxRequestDesserts();
-            }
-            else if (dessertsCounter == 4) {
-                var randomNum = randomInt(dessertMax);
-                while (checkNum == randomNum) {
-                    console.log("heldfdf")
-                    var randomNum = randomInt(dessertMax);
-                }
-                console.log(dessertMax);
-                console.log(randomNum);
-                let listItem = $('#forthItemdesserts');
-                listItem.append($(`<h3>${data.meals[randomNum].strMeal}</h3>`))
-                document.getElementById("forthImagedesserts").src = data.meals[randomNum].strMealThumb;
-                dessertsCounter++;
-                checkNum = randomNum;
-                AjaxRequestDesserts();
-            }
-            else if (dessertsCounter == 5) {
-                var randomNum = randomInt(dessertMax);
-                while (checkNum == randomNum) {
-                    console.log("heldfdf")
-                    var randomNum = randomInt(dessertMax);
-                }
-                console.log(dessertMax);
-                console.log(randomNum);
-                let listItem = $('#fifthItemdesserts');
-                listItem.append($(`<h3>${data.meals[randomNum].strMeal}</h3>`))
-                document.getElementById("fifthImagedesserts").src = data.meals[randomNum].strMealThumb;
-                dessertsCounter++;
-                AjaxRequestDesserts();
-            }
-            else {
-                console.log("Error");
-            }
+            breakfastArray.push(randomNumber);
         }
+        let listItem = $('#firstItembreakfastfood');
+        listItem.append($(`<h3>${data.meals[breakfastArray[0]].strMeal}</h3>`))
+        document.getElementById("firstImagebreakfastfood").src = data.meals[breakfastArray[0]].strMealThumb;
+        mealIdArray.push(data.meals[breakfastArray[0]].idMeal);
+        breakfastCounter++;
+        AjaxRequestBreakfast();
+
+    }
+    else if (breakfastCounter == 2) {
+        let listItem = $('#secondItembreakfastfood');
+        listItem.append($(`<h3>${data.meals[breakfastArray[1]].strMeal}</h3>`))
+        document.getElementById("secondImagebreakfastfood").src = data.meals[breakfastArray[1]].strMealThumb;
+        mealIdArray.push(data.meals[breakfastArray[1]].idMeal);
+        breakfastCounter++;
+        AjaxRequestBreakfast();
+    }
+    else if (breakfastCounter == 3) {
+        let listItem = $('#thirdItembreakfastfood');
+        listItem.append($(`<h3>${data.meals[breakfastArray[2]].strMeal}</h3>`))
+        document.getElementById("thirdImagebreakfastfood").src = data.meals[breakfastArray[2]].strMealThumb;
+        mealIdArray.push(data.meals[breakfastArray[2]].idMeal);
+        breakfastCounter++;
+        AjaxRequestBreakfast();
+    }
+    else if (breakfastCounter == 4) {
+        let listItem = $('#forthItembreakfastfood');
+        listItem.append($(`<h3>${data.meals[breakfastArray[3]].strMeal}</h3>`))
+        document.getElementById("forthImagebreakfastfood").src = data.meals[breakfastArray[3]].strMealThumb;
+        mealIdArray.push(data.meals[breakfastArray[3]].idMeal);
+        breakfastCounter++;
+        AjaxRequestBreakfast();
+    }
+    else if (breakfastCounter == 5) {
+        let listItem = $('#fifthItembreakfastfood');
+        listItem.append($(`<h3>${data.meals[breakfastArray[4]].strMeal}</h3>`))
+        document.getElementById("fifthImagebreakfastfood").src = data.meals[breakfastArray[4]].strMealThumb;
+        mealIdArray.push(data.meals[breakfastArray[4]].idMeal);
+        breakfastCounter++;
+        console.log("Breakfast done");
+        AjaxRequestDesserts();
+    }
+    else {
+        console.log("Error");
+    }
+}
+
+function dessertRecipes(data) {
+    if (dessertsCounter == 1) {
+        for (var j = 0; j <= 4; j++) {
+            randomNumber = Math.floor(Math.random() * dessertMax)
+            while (dessertArray.includes(randomNumber)) {
+                randomNumber = Math.floor(Math.random() * dessertMax)
+            }
+            dessertArray.push(randomNumber);
+        }
+        let listItem = $('#firstItemdesserts');
+        listItem.append($(`<h3>${data.meals[dessertArray[0]].strMeal}</h3>`))
+        document.getElementById("firstImagedesserts").src = data.meals[dessertArray[0]].strMealThumb;
+        mealIdArray.push(data.meals[dessertArray[0]].idMeal);
+        dessertsCounter++;
+        AjaxRequestDesserts();
+
+    }
+    else if (dessertsCounter == 2) {
+        let listItem = $('#secondItemdesserts');
+        listItem.append($(`<h3>${data.meals[dessertArray[1]].strMeal}</h3>`))
+        document.getElementById("secondImagedesserts").src = data.meals[dessertArray[1]].strMealThumb;
+        mealIdArray.push(data.meals[dessertArray[1]].idMeal);
+        dessertsCounter++;
+        AjaxRequestDesserts();
+    }
+    else if (dessertsCounter == 3) {
+        let listItem = $('#thirdItemdesserts');
+        listItem.append($(`<h3>${data.meals[dessertArray[2]].strMeal}</h3>`))
+        document.getElementById("thirdImagedesserts").src = data.meals[dessertArray[2]].strMealThumb;
+        mealIdArray.push(data.meals[dessertArray[2]].idMeal);
+        dessertsCounter++;
+        AjaxRequestDesserts();
+    }
+    else if (dessertsCounter == 4) {
+        let listItem = $('#forthItemdesserts');
+        listItem.append($(`<h3>${data.meals[dessertArray[3]].strMeal}</h3>`))
+        document.getElementById("forthImagedesserts").src = data.meals[dessertArray[3]].strMealThumb;
+        mealIdArray.push(data.meals[dessertArray[3]].idMeal);
+        dessertsCounter++;
+        AjaxRequestDesserts();
+    }
+    else if (dessertsCounter == 5) {
+        let listItem = $('#fifthItemdesserts');
+        listItem.append($(`<h3>${data.meals[dessertArray[4]].strMeal}</h3>`))
+        document.getElementById("fifthImagedesserts").src = data.meals[dessertArray[4]].strMealThumb;
+        mealIdArray.push(data.meals[dessertArray[4]].idMeal);
+        dessertsCounter++;
+        console.log("dessert Done");
+        console.log(mealIdArray);
+    }
+    else {
+        console.log("Error");
+    }
+}
+
+
+//Information gathered to pass data from one JS file to another. Link: https://lage.us/Javascript-Pass-Variables-to-Another-Page.html#:~:text=There%20are%20two%20ways%20to,query%20string%20with%20the%20URL.
+
+function firstImgPastaClicked() {
+    console.log("view recipe ");
+    imageNum = 0;
+    passMealId(imageNum);
+}
+
+function secondImgPastaClicked() {
+    imageNum = 1;
+    passMealId(imageNum);
+}
+
+function thirdImgPastaClicked() {
+    imageNum = 2;
+    passMealId(imageNum);
+}
+
+function forthImgPastaClicked() {
+    imageNum = 3;
+    passMealId(imageNum);
+}
+
+function fifthImgPastaClicked() {
+    imageNum = 4;
+    passMealId(imageNum);
+}
+
+// seafood image click
+function firstImgSeafoodClicked() {
+    imageNum = 5;
+    passMealId(imageNum);
+}
+
+function secondImgSeafoodClicked() {
+    imageNum = 6;
+    passMealId(imageNum);
+}
+
+function thirdImgSeafoodClicked() {
+    imageNum = 7;
+    passMealId(imageNum);
+}
+
+function forthImgSeafoodClicked() {
+    imageNum = 8;
+    passMealId(imageNum);
+}
+
+function fifthImgSeafoodClicked() {
+    imageNum = 9;
+    passMealId(imageNum);
+}
+
+// breakfast image click
+function firstImgBreakfastClicked() {
+    imageNum = 10;
+    passMealId(imageNum);
+}
+
+function secondImgBreakfastClicked() {
+    imageNum = 11;
+    passMealId(imageNum);
+}
+
+function thirdImgBreakfastClicked() {
+    imageNum = 12;
+    passMealId(imageNum);
+}
+
+function forthImgBreakfastClicked() {
+    imageNum = 13;
+    passMealId(imageNum);
+}
+
+function fifthImgBreakfastClicked() {
+    imageNum = 14;
+    passMealId(imageNum);
+}
+
+// dessert image click
+function firstImgDessertClicked() {
+    imageNum = 15;
+    passMealId(imageNum);
+}
+
+function secondImgDessertClicked() {
+    imageNum = 16;
+    passMealId(imageNum);
+}
+
+function thirdImgDessertClicked() {
+    imageNum = 17;
+    passMealId(imageNum);
+}
+
+function forthImgDessertClicked() {
+    imageNum = 18;
+    passMealId(imageNum);
+}
+
+function fifthImgDessertClicked() {
+    imageNum = 19;
+    passMealId(imageNum);
+}
+
+
+
+function passMealId(imageNum) {
+    if (imageNum === undefined || imageNum === null) {
+        console.log("null/undefined image number")
+    }
+    else {
+        var mealNumber = mealIdArray[imageNum];
+        console.log(mealNumber);
+        sessionStorage.setItem("number", mealNumber);
+        loadWebPage();
     }
 }
