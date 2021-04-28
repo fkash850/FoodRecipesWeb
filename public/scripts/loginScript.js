@@ -1,5 +1,5 @@
 /* https://github.com/RajnishKatharotiya/share-data-between-html-pages */
-function loginValues() {
+/*function loginValues() {
     console.log("loginValues() function");
 
     let fname = document.getElementById('fname').value;
@@ -11,4 +11,4 @@ function loginValues() {
     sessionStorage.setItem("email", email);
 
     return false;
-}
+}*/

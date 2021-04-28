@@ -21,7 +21,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/meals', mealsRouter);
 
-app.post("../public/pages/recipe-view.html", function(req, res) {
+app.post("../pages/profile.html", function(req, res) {
     // Create a user from the create-account form
     const user = new FoodRecipes({
         fname: req.body.fname,
