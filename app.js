@@ -42,7 +42,7 @@ app.post("/create", function(req, res) {
 });
 
 // Get user from the sign-in form
-app.get("/read", function(req, res) {
+app.get("/create", function(req, res) {
     FoodRecipes.findOne({ email: new RegExp(user.email, "i") }, 
         function(err, user) {
             if (user === null) {
