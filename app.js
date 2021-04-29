@@ -6,7 +6,7 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var mealsRouter = require('./routes/meals');
-const FoodRecipes = require('../routes/foodrecipe');
+const FoodRecipes = require('./routes/foodrecipe');
 
 var app = express();
 
@@ -43,18 +43,13 @@ app.post("/create", function(req, res) {
 
 // Get user from the sign-in form
 app.get("/read", function(req, res) {
-    const user = new FoodRecipes({
-        email: req.body.email,
-        password: req.body.password
-    });
-
     FoodRecipes.findOne({ email: new RegExp(user.email, "i") }, 
         function(err, user) {
             if (user === null) {
                 res.status(400).send(err);
             }
             else {
-                res.send(user.fname + " " + user.lname + "\n" + user.email);
+                res.send(user);
             }
     });
 });
