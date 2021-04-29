@@ -19,7 +19,7 @@ function loadMealFromAPI(mealNumber){
 
 function changeRecipe(data) {
     let title = $('#title');
-    title.append($(`<h2>${data.meals[0].strMeal}</h2>`))
+    title.append($(`<h2>${data.meals[0].strMeal}</h2>`));
     var image = new Image();
     image.src = data.meals[0].strMealThumb;
     document.getElementById('title').append(image);

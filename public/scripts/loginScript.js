@@ -27,7 +27,7 @@ app.post("/create", function(req, res) {
             fname.value = req.body.fname;
             lname.value = req.body.lname;
             email.value = req.body.email;
-            userInfo.style.display = block;
+            userInfo.style.display = block; 
         }
     });
 });
