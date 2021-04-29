@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../stylesheets/style.css">
+    <script src="../scripts/loginScript.js" defer></script>
     <title>Food Recipes Profile</title>
 </head>
 <body>
@@ -20,23 +21,7 @@
     </div>
 
     <br><br>
-    <h2 id="result-name"></h2>
-    <h2 id="result-email"></h2>
-
-    <script>
-        var result_name = document.getElementById('result-name');
-        var nameDisplay = result_name.style.display;
-        var result_email = document.getElementById('result-email');
-        var emailDisplay = result_email.style.display;
-
-        result_name.innerHTML = sessionStorage.getItem("fname")
-            + " " + sessionStorage.getItem("lname");
-        result_email.innerHTML = sessionStorage.getItem("email");
-
-        if (nameDisplay == 'none' && emailDisplay == 'none') {
-            result_name.style.display = 'block';
-            result_email.style.display = 'block';
-        }
-    </script>
+    <h2 class="userInfo"><span id="result-fname"></span> <span id="result-lname"></span></h2>
+    <h3 id="result-email" class="userInfo"></h3>
 </body>
 </html>
